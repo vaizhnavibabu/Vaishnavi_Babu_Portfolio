@@ -367,8 +367,6 @@ coding efficiency by ~20% through structured problem solving and code optimizati
         <input name="subject" placeholder="Subject">
         <textarea name="message" rows="5" placeholder="Message"></textarea>
         <button type="submit" class="submit-btn">Submit</button>
-        <input type="hidden" name="_redirect" value="https://vaizhnavibabu.github.io/Vaishnavi_Babu_Portfolio/thankyou.html">
-        <input type="hidden" name="_next" value="https://vaizhnavibabu.github.io/Vaishnavi_Babu_Portfolio/thankyou.html">
       </form>
     </div>
   </div>
@@ -396,6 +394,33 @@ navLinks.forEach(link=>{
     navMenu.classList.remove('active');
   });
 });
+
+// ===== AJAX FORMSPREE SUBMIT =====
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+  try {
+    const response = await fetch('https://formspree.io/f/xbdawpwe', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      window.location.href = 'thankyou.html';
+    } else {
+      alert('Oops! Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    alert('Network error. Please try again.');
+  }
+});
+});
 </script>
 
 <footer style="text-align:center;padding:20px 0;color:white;margin-top:20px;">
@@ -404,6 +429,7 @@ navLinks.forEach(link=>{
 
 </body>
 </html>
+
 
 
 
