@@ -360,13 +360,13 @@ coding efficiency by ~20% through structured problem solving and code optimizati
     </div>
     <div>
       <h3 style="margin-bottom:10px;color:#7b2ff7">Send Me a Message</h3>
-      <form class="contact-form">
-        <input placeholder="First Name *" required>
-        <input placeholder="Last Name *" required>
-        <input placeholder="Email *" required>
-        <input placeholder="Subject">
-        <textarea rows="5" placeholder="Message"></textarea>
-        <button class="submit-btn">Submit</button>
+      <form class="contact-form" action="https://formspree.io/f/xbdawpwe" method="POST">
+        <input name="firstName" placeholder="First Name *" required>
+        <input name="lastName" placeholder="Last Name *" required>
+        <input name="email" type="email" placeholder="Email *" required>
+        <input name="subject" placeholder="Subject">
+        <textarea name="message" rows="5" placeholder="Message"></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
       </form>
     </div>
   </div>
@@ -402,4 +402,5 @@ navLinks.forEach(link=>{
 
 </body>
 </html>
+
 
